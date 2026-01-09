@@ -1,0 +1,104 @@
+---
+import { Icon } from 'astro-icon/components';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Button from '~/components/ui/Button.astro';
+import type { CallToAction } from '~/types';
+
+interface Review {
+  name: string;
+  rating: number;
+  comment: string;
+  date: string;
+  visitType: string;
+  verified?: boolean;
+}
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  reviews?: Review[];
+  callToAction?: CallToAction;
+  id?: string;
+  isDark?: boolean;
+  classes?: Record<string, string>;
+  bg?: string;
+}
+
+const {
+  title = '',
+  subtitle = '',
+  tagline = '',
+  reviews = [],
+  callToAction,
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+
+const getInitial = (name: string) => name.charAt(0).toUpperCase();
+
+const renderStars = (rating: number) => {
+  return Array.from({ length: 5 }, (_, i) => i < rating);
+};
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} />
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {
+      reviews &&
+        reviews.map(({ name, rating, comment, date, visitType, verified = true }) => (
+          <div class="flex h-auto intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
+            <div class="flex flex-col p-4 md:p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600 bg-white dark:bg-slate-900 w-full">
+              <div class="mb-4">
+                <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-semibold shrink-0">
+                      {getInitial(name)}
+                    </div>
+                    <span class="font-semibold text-lg">{name}</span>
+                  </div>
+                  <div class="flex gap-0.5 shrink-0">
+                    {renderStars(rating).map((filled) => (
+                      <Icon
+                        name="tabler:star-filled"
+                        class={`w-5 h-5 ${filled ? 'text-primary' : 'text-gray-300 dark:text-gray-600'}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+                {verified && (
+                  <span class="inline-flex items-center gap-1 px-2 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">
+                    APPUNTAMENTO VERIFICATO
+                    <Icon name="tabler:circle-check-filled" class="w-4 h-4" />
+                  </span>
+                )}
+              </div>
+
+              <blockquote class="flex-auto mb-4">
+                <p class="text-muted leading-relaxed">{comment}</p>
+              </blockquote>
+
+              <div class="text-sm text-muted flex flex-wrap gap-2">
+                <span>{date}</span>
+                <span>&bull;</span>
+                <span>{visitType}</span>
+              </div>
+            </div>
+          </div>
+        ))
+    }
+  </div>
+
+  {
+    callToAction && (
+      <div class="flex justify-center mx-auto w-fit mt-8 md:mt-12 font-medium">
+        <Button {...callToAction} />
+      </div>
+    )
+  }
+</WidgetWrapper>
