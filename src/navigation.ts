@@ -62,6 +62,6 @@ export const footerData = {
     },
   ],
   footNote: `
-    &copy; ${new Date().getFullYear()} Dott.ssa Valentina Di Gregorio. Tutti i diritti riservati.
+    &copy; ${new Date().getFullYear()} Dott.ssa Valentina di Gregorio. Tutti i diritti riservati.
   `,
 };

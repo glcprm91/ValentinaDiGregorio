@@ -8,9 +8,10 @@ import Services from '~/components/widgets/Services.astro';
 import Reviews from '~/components/widgets/Reviews.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Steps from '~/components/widgets/Steps.astro';
+import ContactForm from '~/components/widgets/ContactForm.astro';
 
 const metadata = {
-  title: 'Dott.ssa Valentina Di Gregorio - Dermatologa e Venereologa',
+  title: 'Dott.ssa Valentina di Gregorio - Dermatologa e Venereologa',
   ignoreTitleTemplate: true,
 };
 
@@ -30,9 +31,9 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
       },
       { text: 'Scopri di piu', href: '#chi-sono' },
     ]}
-    image={{ src: '~/assets/images/dottoressa.jpeg', alt: 'Dott.ssa Valentina Di Gregorio' }}
+    image={{ src: '~/assets/images/dottoressa.jpeg', alt: 'Dott.ssa Valentina di Gregorio' }}
   >
-    <Fragment slot="title"> Dott.ssa Valentina Di Gregorio </Fragment>
+    <Fragment slot="title"> Dott.ssa Valentina di Gregorio </Fragment>
 
     <Fragment slot="subtitle">
       <span class="font-semibold">Specialista in Dermatologia e Venereologia</span><br />
@@ -67,7 +68,7 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
     ]}
     image={{
       src: '~/assets/images/dottoressa.jpeg',
-      alt: 'Dott.ssa Valentina Di Gregorio',
+      alt: 'Dott.ssa Valentina di Gregorio',
     }}
   >
     <Fragment slot="content">
@@ -123,7 +124,7 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      src: '~/assets/images/percorso.jpg',
       alt: 'Formazione medica',
     }}
   />
@@ -288,4 +289,25 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
       <span class="text-sm text-muted">Scegli la data e l'orario piu comodo per te</span>
     </Fragment>
   </CallToAction>
+
+  <!-- Contact Form -->
+  <ContactForm
+    id="contattami"
+    title="Richiedi Informazioni"
+    subtitle="Compila il form per richiedere informazioni o prenotare una visita. Ti ricontatterò al piu presto."
+    tagline="Contattami"
+    email="gianluca8491@gmail.com"
+    services={[
+      'Prima visita dermatologica',
+      'Visita dermatologica',
+      'Epiluminescenza',
+      'Mappatura nei',
+      'Prima visita tricologica',
+      'Trattamento verruche e molluschi',
+      'Visita dermatologica + epiluminescenza',
+      'Visita dermatologica + mappatura nei',
+      'Visita dermatologica di controllo',
+      'Visita tricologica',
+    ]}
+  />
 </Layout>

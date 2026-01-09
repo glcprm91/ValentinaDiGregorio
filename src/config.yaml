@@ -1,5 +1,5 @@
 site:
-  name: Dott.ssa Valentina Di Gregorio
+  name: Dott.ssa Valentina di Gregorio
   site: 'https://valentinadigregorio.it'
   base: '/'
   trailingSlash: false
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Dott.ssa Valentina Di Gregorio - Dermatologa
-    template: '%s — Dott.ssa Valentina Di Gregorio'
+    default: Dott.ssa Valentina di Gregorio - Dermatologa
+    template: '%s — Dott.ssa Valentina di Gregorio'
   description: 'Specialista in Dermatologia e Venereologia. Diagnosi e cura di patologie cutanee, mappatura nei, epiluminescenza, tricologia. Prenota una visita su MioDottore.'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Dott.ssa Valentina Di Gregorio
+    site_name: Dott.ssa Valentina di Gregorio
     images:
       - url: '~/assets/images/dottoressa.jpeg'
         width: 1200
