@@ -73,3 +73,5 @@ import Component from '~/components/Component.astro';
 - Tailwind configured in `src/assets/styles/tailwind.css`
 - Custom styles and fonts in `src/components/CustomStyles.astro`
 - Dark mode supported via `ui.theme` in config.yaml
+
+Always use Context7 MCP when I need library/API documentation, code generation, setup or configuration steps without me having to explicitly ask.

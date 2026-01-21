@@ -18,82 +18,264 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
-  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+<section class="hero-section relative md:-mt-[76px] not-prose overflow-hidden" {...id ? { id } : {}}>
+  <!-- Animated gradient background -->
+  <div class="hero-bg absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#f0fdf9] via-white to-[#ecfeff] dark:from-[#030621] dark:via-[#051728] dark:to-[#030621]"></div>
+
+    <!-- Organic blob shapes -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Subtle grid pattern -->
+    <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style="background-image: radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0); background-size: 40px 40px;"></div>
+
     <slot name="bg">
       {bg ? <Fragment set:html={bg} /> : null}
     </slot>
   </div>
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-    <div class="py-12 md:py-20">
-      <div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto">
-        {
-          tagline && (
-            <p
-              class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-              set:html={tagline}
-            />
-          )
-        }
-        {
-          title && (
-            <h1
-              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-              set:html={title}
-            />
-          )
-        }
-        <div class="max-w-3xl mx-auto">
+    <div class="py-16 md:py-24 lg:py-32">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+        <!-- Text Content -->
+        <div class="hero-content text-center lg:text-left order-2 lg:order-1">
           {
-            subtitle && (
+            tagline && (
               <p
-                class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-                set:html={subtitle}
+                class="hero-tagline inline-flex items-center gap-2 text-sm font-medium text-primary dark:text-primary px-4 py-1.5 rounded-full bg-primary/10 dark:bg-primary/20 mb-6"
+                set:html={tagline}
               />
             )
           }
           {
-            actions && (
-              <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-                {Array.isArray(actions) ? (
-                  actions.map((action) => (
-                    <div class="flex w-full sm:w-auto">
-                      <Button {...(action || {})} class="w-full sm:mb-0" />
-                    </div>
-                  ))
-                ) : (
-                  <Fragment set:html={actions} />
-                )}
+            title && (
+              <h1
+                class="hero-title text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight mb-6 text-gray-900 dark:text-white"
+                set:html={title}
+              />
+            )
+          }
+          <div class="max-w-xl mx-auto lg:mx-0">
+            {
+              subtitle && (
+                <div
+                  class="hero-subtitle text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed"
+                  set:html={subtitle}
+                />
+              )
+            }
+            {
+              actions && (
+                <div class="hero-actions flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  {Array.isArray(actions) ? (
+                    actions.map((action, index) => (
+                      <div class="flex w-full sm:w-auto">
+                        <Button
+                          {...(action || {})}
+                          class={`w-full sm:w-auto ${index === 0 ? 'hero-btn-primary shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300' : 'hero-btn-secondary'}`}
+                        />
+                      </div>
+                    ))
+                  ) : (
+                    <Fragment set:html={actions} />
+                  )}
+                </div>
+              )
+            }
+          </div>
+          {content && <div class="mt-8"><Fragment set:html={content} /></div>}
+        </div>
+
+        <!-- Image -->
+        <div class="hero-image-container relative order-1 lg:order-2 flex justify-center lg:justify-end">
+          {
+            image && (
+              <div class="relative">
+                <!-- Decorative ring -->
+                <div class="absolute -inset-4 sm:-inset-6 rounded-full border-2 border-dashed border-primary/20 dark:border-primary/30 animate-[spin_60s_linear_infinite]"></div>
+
+                <!-- Glow effect -->
+                <div class="absolute -inset-4 bg-gradient-to-tr from-primary/20 via-transparent to-teal-300/20 dark:from-primary/10 dark:to-teal-400/10 rounded-full blur-2xl"></div>
+
+                <!-- Main image container -->
+                <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] rounded-full overflow-hidden ring-4 ring-white dark:ring-gray-800 shadow-2xl">
+                  {typeof image === 'string' ? (
+                    <Fragment set:html={image} />
+                  ) : (
+                    <Image
+                      class="w-full h-full object-cover object-top"
+                      widths={[400, 500, 600, 800]}
+                      sizes="(max-width: 640px) 288px, (max-width: 768px) 320px, (max-width: 1024px) 384px, 420px"
+                      loading="eager"
+                      width={420}
+                      height={420}
+                      {...image}
+                    />
+                  )}
+                </div>
+
+                <!-- Decorative dots -->
+                <div class="absolute top-8 -left-8 w-16 h-16 grid grid-cols-3 gap-2 opacity-40">
+                  {[...Array(9)].map(() => (
+                    <div class="w-2 h-2 rounded-full bg-primary"></div>
+                  ))}
+                </div>
               </div>
             )
           }
         </div>
-        {content && <Fragment set:html={content} />}
-      </div>
-      <div
-        class="intersect-once intersect-no-queue intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-      >
-        {
-          image && (
-            <div class="relative m-auto max-w-5xl">
-              {typeof image === 'string' ? (
-                <Fragment set:html={image} />
-              ) : (
-                <Image
-                  class="mx-auto rounded-md w-full"
-                  widths={[400, 768, 1024, 2040]}
-                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
-                  loading="eager"
-                  width={1024}
-                  height={576}
-                  {...image}
-                />
-              )}
-            </div>
-          )
-        }
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .hero-section {
+    min-height: calc(100vh - 76px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Animated blobs */
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    animation: blob-float 20s ease-in-out infinite;
+  }
+
+  .blob-1 {
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, rgba(0, 179, 152, 0.15), rgba(0, 155, 132, 0.1));
+    top: -200px;
+    right: -200px;
+    animation-delay: 0s;
+  }
+
+  .blob-2 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, rgba(0, 179, 152, 0.1), rgba(45, 212, 191, 0.08));
+    bottom: -100px;
+    left: -100px;
+    animation-delay: -7s;
+  }
+
+  .blob-3 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, rgba(0, 128, 109, 0.1), rgba(0, 179, 152, 0.05));
+    top: 50%;
+    left: 30%;
+    animation-delay: -14s;
+  }
+
+  @keyframes blob-float {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    25% {
+      transform: translate(30px, -30px) scale(1.05);
+    }
+    50% {
+      transform: translate(-20px, 20px) scale(0.95);
+    }
+    75% {
+      transform: translate(20px, 10px) scale(1.02);
+    }
+  }
+
+  /* Content animations */
+  .hero-content {
+    animation: hero-fade-in 0.8s ease-out forwards;
+  }
+
+  .hero-tagline {
+    animation: hero-fade-in 0.8s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+
+  .hero-title {
+    animation: hero-fade-in 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .hero-subtitle {
+    animation: hero-fade-in 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  .hero-actions {
+    animation: hero-fade-in 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+  }
+
+  .hero-image-container {
+    animation: hero-image-in 1s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  @keyframes hero-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes hero-image-in {
+    from {
+      opacity: 0;
+      transform: scale(0.9) translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  /* Dark mode adjustments */
+  :global(.dark) .blob-1 {
+    background: linear-gradient(135deg, rgba(0, 179, 152, 0.08), rgba(0, 155, 132, 0.05));
+  }
+
+  :global(.dark) .blob-2 {
+    background: linear-gradient(135deg, rgba(0, 179, 152, 0.05), rgba(45, 212, 191, 0.03));
+  }
+
+  :global(.dark) .blob-3 {
+    background: linear-gradient(135deg, rgba(0, 128, 109, 0.05), rgba(0, 179, 152, 0.02));
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .hero-section {
+      min-height: auto;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .blob {
+      animation: none;
+    }
+    .hero-content,
+    .hero-tagline,
+    .hero-title,
+    .hero-subtitle,
+    .hero-actions,
+    .hero-image-container {
+      animation: none;
+      opacity: 1;
+    }
+  }
+</style>

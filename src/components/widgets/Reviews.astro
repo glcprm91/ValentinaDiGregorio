@@ -62,11 +62,12 @@ const renderStars = (rating: number) => {
                     </div>
                     <span class="font-semibold text-lg">{name}</span>
                   </div>
-                  <div class="flex gap-0.5 shrink-0">
+                  <div class="flex gap-0.5 shrink-0" role="img" aria-label={`Valutazione: ${rating} stelle su 5`}>
                     {renderStars(rating).map((filled) => (
                       <Icon
                         name="tabler:star-filled"
                         class={`w-5 h-5 ${filled ? 'text-primary' : 'text-gray-300 dark:text-gray-600'}`}
+                        aria-hidden="true"
                       />
                     ))}
                   </div>
@@ -74,7 +75,7 @@ const renderStars = (rating: number) => {
                 {verified && (
                   <span class="inline-flex items-center gap-1 px-2 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">
                     APPUNTAMENTO VERIFICATO
-                    <Icon name="tabler:circle-check-filled" class="w-4 h-4" />
+                    <Icon name="tabler:circle-check-filled" class="w-4 h-4" aria-hidden="true" />
                   </span>
                 )}
               </div>

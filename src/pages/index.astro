@@ -36,9 +36,10 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
     <Fragment slot="title"> Dott.ssa Valentina di Gregorio </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="font-semibold">Specialista in Dermatologia e Venereologia</span><br />
-      <span class="text-muted">
-        Diagnosi e cura delle patologie cutanee, mappatura nei, epiluminescenza e tricologia.
+      <span class="font-semibold text-2xl md:text-3xl">Dermatologia, Venereologia e Tricologia</span>
+      <br />
+      <span class="text-sm md:text-base text-muted mt-2 block">
+        Ortona - Pescara - Sambuceto - Porto San Giorgio - Civitanova Marche - Monsampolo del Tronto
       </span>
     </Fragment>
   </Hero>
@@ -47,13 +48,13 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
   <Content
     id="chi-sono"
     isReversed
-    tagline="Chi Sono"
-    title="Il mio percorso professionale"
+    tagline="Chi sono"
+    title="Percorso professionale"
     items={[
       {
         title: 'Formazione accademica',
         description:
-          "Laureata in Medicina e Chirurgia presso l'Universita G. d'Annunzio di Chieti-Pescara, specializzata in Dermatologia e Venereologia con il massimo dei voti e lode.",
+          "Laureata in Medicina e Chirurgia presso l'Università G. d'Annunzio di Chieti-Pescara, specializzata in Dermatologia e Venereologia con lode.",
       },
       {
         title: 'Specializzazioni',
@@ -63,7 +64,7 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
       {
         title: 'Esperienza clinica',
         description:
-          'Dirigente Medico presso AUSL Romagna e attualmente presso INRCA IRCCS di Fermo-Ancona. Utilizzo della videodermatoscopia digitale per la diagnosi precoce del melanoma.',
+          '2023-2025 Dirigente Medico presso AUSL Romagna e successivamente presso INRCA IRCCS di Fermo-Ancona. Attualmente Specialista ambulatoriale presso AST 4 Fermo.',
       },
     ]}
     image={{
@@ -97,7 +98,8 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
   <Steps
     id="competenze"
     title="Formazione e Competenze"
-    tagline="Il mio percorso"
+    tagline=""
+    classes={{ headline: { container: '!text-center' } }}
     items={[
       {
         title: '2025 - Scuola S.I.Tri.',
@@ -131,9 +133,9 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
 
   <!-- Patologie Trattate -->
   <Features
-    tagline="Aree di competenza"
+    tagline="Aree di Competenza"
     title="Patologie trattate"
-    subtitle="Mi occupo della diagnosi e del trattamento di un'ampia gamma di patologie dermatologiche"
+    subtitle=""
     items={[
       {
         title: 'Patologie infiammatorie',
@@ -142,7 +144,7 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
       },
       {
         title: 'Dermatologia oncologica',
-        description: 'Melanoma, Cheratosi attinica, Mappatura nei, Epiluminescenza, Prevenzione tumori cutanei',
+        description: 'Melanoma, Cheratosi attinica, Mappatura nei, Epiluminescenza, Prevenzione tumori cutanei utilizzando la videodermatoscopia digitale con modulo AI integrato',
         icon: 'tabler:shield-check',
       },
       {
@@ -175,20 +177,20 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
   <!-- Prestazioni e Prezzi -->
   <Services
     id="prestazioni"
-    title="Prestazioni e Prezzi"
-    subtitle="Tariffe trasparenti per ogni tipo di visita e trattamento"
+    title="Prestazioni"
+    subtitle="I servizi dermatologici che offro"
     tagline="Servizi"
     services={[
-      { name: 'Prima visita dermatologica', price: 'Da 100', icon: 'tabler:stethoscope' },
-      { name: 'Visita dermatologica', price: 'Da 100', icon: 'tabler:report-medical' },
-      { name: 'Epiluminescenza', price: '120', icon: 'tabler:search' },
-      { name: 'Mappatura nei', price: 'Da 120', icon: 'tabler:map-pin' },
-      { name: 'Prima visita tricologica', price: '100', icon: 'tabler:user-scan' },
-      { name: 'Trattamento verruche e molluschi', price: '180', icon: 'tabler:first-aid-kit' },
-      { name: 'Visita dermatologica + epiluminescenza', price: '110 - 120', icon: 'tabler:clipboard-plus' },
-      { name: 'Visita dermatologica + mappatura nei', price: 'Da 130', icon: 'tabler:clipboard-check' },
-      { name: 'Visita dermatologica di controllo', price: '80 - 85', icon: 'tabler:refresh' },
-      { name: 'Visita tricologica', price: '100', icon: 'tabler:scan' },
+      { name: 'Prima visita dermatologica', icon: 'tabler:stethoscope' },
+      { name: 'Visita dermatologica', icon: 'tabler:report-medical' },
+      { name: 'Epiluminescenza', icon: 'tabler:search' },
+      { name: 'Mappatura nei', icon: 'tabler:map-pin' },
+      { name: 'Prima visita tricologica', icon: 'tabler:user-scan' },
+      { name: 'Trattamento verruche e molluschi', icon: 'tabler:first-aid-kit' },
+      { name: 'Visita dermatologica + epiluminescenza', icon: 'tabler:clipboard-plus' },
+      { name: 'Visita dermatologica + mappatura nei', icon: 'tabler:clipboard-check' },
+      { name: 'Visita dermatologica di controllo', icon: 'tabler:refresh' },
+      { name: 'Visita tricologica', icon: 'tabler:scan' },
     ]}
     callToAction={{
       text: 'Prenota la tua visita',
