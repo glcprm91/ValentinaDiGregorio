@@ -1,0 +1,60 @@
+---
+// Banner cookie - appare alla prima visita, scompare dopo accettazione/rifiuto
+---
+
+<div
+  id="cookie-banner"
+  class="fixed bottom-0 left-0 right-0 z-50 hidden"
+  role="dialog"
+  aria-label="Informativa cookie"
+  aria-modal="false"
+>
+  <div class="bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-700 shadow-lg px-4 py-4 sm:px-6">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
+      <p class="text-sm text-gray-700 dark:text-slate-300 leading-relaxed">
+        Questo sito utilizza esclusivamente <strong>cookie tecnici</strong> necessari al suo funzionamento.
+        Non utilizziamo cookie di profilazione o tracciamento.
+        Leggi la nostra{' '}
+        <a href="/privacy" class="text-primary underline hover:no-underline font-medium">Privacy Policy</a>.
+      </p>
+      <div class="flex gap-3 shrink-0">
+        <button
+          id="cookie-accept"
+          class="px-4 py-2 text-sm font-semibold rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors"
+        >
+          Ho capito
+        </button>
+        <button
+          id="cookie-reject"
+          class="px-4 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-slate-600 text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
+        >
+          Chiudi
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const COOKIE_KEY = 'cookie_consent';
+  const banner = document.getElementById('cookie-banner');
+
+  function hideBanner() {
+    banner?.classList.add('hidden');
+  }
+
+  // Mostra il banner solo se non è stata ancora espressa una scelta
+  if (!localStorage.getItem(COOKIE_KEY)) {
+    banner?.classList.remove('hidden');
+  }
+
+  document.getElementById('cookie-accept')?.addEventListener('click', () => {
+    localStorage.setItem(COOKIE_KEY, 'accepted');
+    hideBanner();
+  });
+
+  document.getElementById('cookie-reject')?.addEventListener('click', () => {
+    localStorage.setItem(COOKIE_KEY, 'rejected');
+    hideBanner();
+  });
+</script>

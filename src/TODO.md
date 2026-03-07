@@ -1,0 +1,3 @@
+-- scrivere privacy policy
+-- prendere 6 recensioni da usare per il sito
+-- modificare testi in ottica seo?

@@ -11,7 +11,7 @@ metadata:
   title:
     default: Dott.ssa Valentina di Gregorio - Dermatologa
     template: '%s — Dott.ssa Valentina di Gregorio'
-  description: 'Specialista in Dermatologia e Venereologia. Diagnosi e cura di patologie cutanee, mappatura nei, epiluminescenza, tricologia. Prenota una visita su MioDottore.'
+  description: 'Specialista in Dermatologia e Venereologia. Diagnosi e cura di patologie cutanee, mappatura nei, epiluminescenza, tricologia. Operativa in Abruzzo a Pescara, Ortona e Sambuceto e nelle Marche a Porto San Giorgio e Civitanova.'
   robots:
     index: true
     follow: true

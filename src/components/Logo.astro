@@ -1,9 +1,79 @@
 ---
-import { SITE } from 'astrowind:config';
 ---
 
-<span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
->
-  {SITE?.name}
-</span>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+
+<div class="logo-lockup flex items-center gap-2.5">
+  <!-- Dermatoscope icon — custom SVG -->
+  <svg
+    class="logo-icon flex-shrink-0"
+    width="36"
+    height="54"
+    viewBox="0 0 36 54"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <!-- Outer ring of lens head -->
+    <circle cx="18" cy="15" r="13.5" stroke="currentColor" stroke-width="2"/>
+    <!-- Inner lens ring -->
+    <circle cx="18" cy="15" r="7.5" stroke="currentColor" stroke-width="1.5"/>
+    <!-- Lens reflection arc -->
+    <path d="M 12 10 Q 14 7.5 17 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+    <!-- Neck connecting head to handle -->
+    <path d="M 14.5 28.5 L 21.5 28.5 L 21.5 30.5 L 14.5 30.5 Z" fill="currentColor"/>
+    <!-- Tapered handle to a rounded tip -->
+    <path d="M 14.5 30.5 C 14 36 13.5 42 16.5 52 Q 17 53.5 18 53.5 Q 19 53.5 19.5 52 C 22.5 42 22 36 21.5 30.5 Z" fill="currentColor"/>
+  </svg>
+
+  <div class="logo-text leading-none">
+    <div class="logo-name">Dott.ssa Valentina di Gregorio</div>
+    <div class="logo-specialty">Dermatologia · Venereologia · Tricologia</div>
+  </div>
+</div>
+
+<style>
+  .logo-icon {
+    color: var(--aw-color-primary);
+    height: 38px;
+    width: auto;
+  }
+
+  @media (min-width: 768px) {
+    .logo-icon {
+      height: 44px;
+    }
+  }
+
+  .logo-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    line-height: 1.2;
+    color: var(--aw-color-text-heading);
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+
+  .logo-specialty {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--aw-color-primary);
+    white-space: nowrap;
+    margin-top: 1px;
+  }
+
+  @media (min-width: 768px) {
+    .logo-name {
+      font-size: 1.15rem;
+    }
+    .logo-specialty {
+      font-size: 0.75rem;
+    }
+  }
+</style>

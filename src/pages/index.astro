@@ -11,7 +11,7 @@ import Steps from '~/components/widgets/Steps.astro';
 import ContactForm from '~/components/widgets/ContactForm.astro';
 
 const metadata = {
-  title: 'Dott.ssa Valentina di Gregorio - Dermatologa e Venereologa',
+  title: 'Dott.ssa Valentina di Gregorio | Dermatologa Venereologa a Pescara, Ortona, Porto San Giorgio, Civitanova Marche',
   ignoreTitleTemplate: true,
 };
 
@@ -19,6 +19,146 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
 ---
 
 <Layout metadata={metadata}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "@id": "https://valentinadigregorio.it/#physician",
+      "name": "Dott.ssa Valentina di Gregorio",
+      "url": "https://valentinadigregorio.it/",
+      "image": "https://valentinadigregorio.it/images/dottoressa.jpeg",
+      "description": "Dermatologa, venereologa e tricologa. Si occupa di dermatologia clinica, dermatologia oncologica, dermochirurgia, tricologia e diagnosi delle principali patologie della pelle, dei capelli e delle malattie sessualmente trasmissibili.",
+      "medicalSpecialty": ["Dermatologic", "Venereology"],
+      "knowsAbout": [
+        "Dermatologia", "Venereologia", "Tricologia", "Dermatologia oncologica",
+        "Dermochirurgia", "Mappatura nei", "Epiluminescenza", "Acne", "Rosacea",
+        "Dermatite atopica", "Psoriasi", "Vitiligine", "Alopecia areata",
+        "Alopecia androgenetica", "Infezioni cutanee", "Malattie sessualmente trasmissibili"
+      ],
+      "areaServed": [
+        { "@type": "City", "name": "Pescara" },
+        { "@type": "City", "name": "Ortona" },
+        { "@type": "City", "name": "Sambuceto" },
+        { "@type": "City", "name": "Porto San Giorgio" },
+        { "@type": "City", "name": "Civitanova Marche" },
+        { "@type": "City", "name": "Monsampolo del Tronto" }
+      ],
+      "availableService": [
+        { "@type": "MedicalProcedure", "name": "Prima visita dermatologica" },
+        { "@type": "MedicalProcedure", "name": "Visita dermatologica" },
+        { "@type": "MedicalProcedure", "name": "Visita dermatologica di controllo" },
+        { "@type": "MedicalProcedure", "name": "Epiluminescenza" },
+        { "@type": "MedicalProcedure", "name": "Mappatura nei" },
+        { "@type": "MedicalProcedure", "name": "Prima visita tricologica" },
+        { "@type": "MedicalProcedure", "name": "Visita tricologica" },
+        { "@type": "MedicalProcedure", "name": "Trattamento verruche e molluschi" },
+        { "@type": "MedicalProcedure", "name": "Visita dermatologica con epiluminescenza" },
+        { "@type": "MedicalProcedure", "name": "Visita dermatologica con mappatura nei" }
+      ],
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Università G. d'Annunzio di Chieti-Pescara" },
+        { "@type": "CollegeOrUniversity", "name": "Università degli Studi di Siena" },
+        { "@type": "CollegeOrUniversity", "name": "Università Vanvitelli di Napoli" }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Laurea in Medicina e Chirurgia",
+          "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Università G. d'Annunzio di Chieti-Pescara" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Specializzazione in Dermatologia e Venereologia",
+          "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Università G. d'Annunzio di Chieti-Pescara" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Master di II livello in Dermochirurgia",
+          "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Università degli Studi di Siena" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Master di II livello in Dermatologia Oncologica",
+          "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Università Vanvitelli di Napoli" }
+        }
+      ],
+      "memberOf": [{ "@type": "Organization", "name": "S.I.Tri." }],
+      "sameAs": [miodottoreUrl],
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "name": "Prenota una visita",
+        "target": { "@type": "EntryPoint", "urlTemplate": miodottoreUrl }
+      }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": "https://valentinadigregorio.it/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Dove visita la Dott.ssa Valentina di Gregorio a Ortona?",
+          "acceptedAnswer": { "@type": "Answer", "text": "La Dott.ssa Valentina di Gregorio effettua visite dermatologiche anche a Ortona. Per conoscere disponibilità, giorni di visita e prenotare un appuntamento, è possibile utilizzare la pagina di prenotazione online." }
+        },
+        {
+          "@type": "Question",
+          "name": "Dove visita la Dott.ssa Valentina di Gregorio a Pescara?",
+          "acceptedAnswer": { "@type": "Answer", "text": "La Dott.ssa Valentina di Gregorio riceve anche a Pescara per visite dermatologiche, tricologiche e controlli specialistici. Per verificare la sede disponibile e gli orari aggiornati, è possibile prenotare online." }
+        },
+        {
+          "@type": "Question",
+          "name": "La Dott.ssa Valentina di Gregorio visita anche a Civitanova Marche?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sì, la Dott.ssa Valentina di Gregorio visita anche a Civitanova Marche. La disponibilità può variare in base alla sede e al periodo, per questo è consigliabile consultare la prenotazione online per verificare giorni e orari disponibili." }
+        },
+        {
+          "@type": "Question",
+          "name": "La Dott.ssa Valentina di Gregorio visita anche a Porto San Giorgio?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sì, tra le località indicate per le visite dermatologiche della Dott.ssa Valentina di Gregorio è presente anche Porto San Giorgio. La prenotazione online consente di verificare la sede e la prima disponibilità utile." }
+        },
+        {
+          "@type": "Question",
+          "name": "È possibile prenotare una visita dermatologica online?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sì, è possibile prenotare online la visita dermatologica attraverso la pagina dedicata. In questo modo è possibile consultare le disponibilità e scegliere data e orario più comodi." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quali servizi dermatologici offre?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Tra le principali prestazioni offerte ci sono prima visita dermatologica, visita di controllo, epiluminescenza, mappatura nei, visita tricologica, prima visita tricologica e trattamenti per verruche e molluschi." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quando è consigliata una visita dermatologica?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Una visita dermatologica è consigliata in presenza di acne, rosacea, dermatite, psoriasi, infezioni cutanee, lesioni pigmentate, cambiamenti nei nei, prurito persistente, caduta dei capelli o altri disturbi della pelle e del cuoio capelluto." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quando fare la mappatura dei nei?",
+          "acceptedAnswer": { "@type": "Answer", "text": "La mappatura dei nei è utile per il controllo periodico delle lesioni pigmentate e per la prevenzione dei tumori cutanei. È particolarmente consigliata in caso di numerosi nei, familiarità per melanoma o cambiamenti recenti nell'aspetto di un neo." }
+        },
+        {
+          "@type": "Question",
+          "name": "La Dott.ssa Valentina di Gregorio si occupa anche di tricologia?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sì, la Dott.ssa Valentina di Gregorio si occupa anche di tricologia, con attenzione alla diagnosi e al trattamento di alopecia areata, alopecia androgenetica e patologie del cuoio capelluto." }
+        },
+        {
+          "@type": "Question",
+          "name": "La Dott.ssa Valentina di Gregorio si occupa di venereologia?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sì, la Dott.ssa Valentina di Gregorio si occupa anche di venereologia e della valutazione di alcune malattie sessualmente trasmissibili, verruche genitali e altre condizioni di interesse specialistico." }
+        },
+        {
+          "@type": "Question",
+          "name": "È possibile prenotare una visita per acne, dermatite o psoriasi?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sì, è possibile prenotare una visita specialistica per acne, dermatite atopica, eczema, psoriasi, rosacea, vitiligine e altre patologie infiammatorie della pelle." }
+        },
+        {
+          "@type": "Question",
+          "name": "Come faccio a scegliere la sede più comoda?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Durante la prenotazione online è possibile verificare le disponibilità in base alla sede e scegliere quella più comoda tra le località indicate." }
+        }
+      ]
+    })} />
+  </Fragment>
+
   <!-- Hero Section -->
   <Hero
     actions={[
@@ -29,18 +169,17 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
         target: '_blank',
         icon: 'tabler:calendar',
       },
-      { text: 'Scopri di piu', href: '#chi-sono' },
+      { text: 'Conosciamoci', href: '#chi-sono' },
     ]}
     image={{ src: '~/assets/images/dottoressa.jpeg', alt: 'Dott.ssa Valentina di Gregorio' }}
   >
     <Fragment slot="title"> Dott.ssa Valentina di Gregorio </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="font-semibold text-2xl md:text-3xl">Dermatologia, Venereologia e Tricologia</span>
-      <br />
-      <span class="text-sm md:text-base text-muted mt-2 block">
-        Ortona - Pescara - Sambuceto - Porto San Giorgio - Civitanova Marche - Monsampolo del Tronto
-      </span>
+      <h2 class="font-semibold text-2xl md:text-3xl">Dermatologia, Venereologia e Tricologia</h2>
+      <h2 class="text-sm md:text-base text-muted mt-2 block">
+        Visite dermatologiche a Pescara, Ortona, Sambuceto, Porto San Giorgio, Civitanova Marche e Monsampolo del Tronto
+      </h2>
     </Fragment>
   </Hero>
 
@@ -49,7 +188,7 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
     id="chi-sono"
     isReversed
     tagline="Chi sono"
-    title="Percorso professionale"
+    title="Il mio Percorso professionale"
     items={[
       {
         title: 'Formazione accademica',
@@ -73,18 +212,20 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
     }}
   >
     <Fragment slot="content">
-      <p class="text-muted mb-4">
-        Ho studiato Medicina e Chirurgia presso l'Universita G. d'Annunzio e successivamente mi sono specializzata in
-        Dermatologia e Venereologia presso la stessa universita con il massimo dei voti.
+     <p class="text-muted mb-4"> 
+Effettuo visite dermatologiche e tricologiche a Pescara, Ortona, Sambuceto, Porto San Giorgio e Civitanova Marche, occupandomi di diagnosi e trattamento delle principali patologie della pelle, dei capelli e delle malattie sessualmente trasmissibili.
+ </p>
+<p class="text-muted mb-4">
+        Ho studiato Medicina e Chirurgia presso l'Università G. d'Annunzio di Chieti-Pescara e successivamente mi sono specializzata in
+        Dermatologia e Venereologia presso lo stesso Ateneo con il massimo dei voti.
       </p>
       <p class="text-muted mb-4">
-        Durante il mio percorso di formazione mi sono occupata in particolare di patologie cutanee infiammatorie e
+        Durante il mio percorso di specializzazione mi sono occupata in particolare di patologie cutanee infiammatorie e
         autoimmuni come dermatite atopica, psoriasi e vitiligine. Ho inoltre coltivato un particolare interesse per la
-        dermochirurgia e la dermatologia oncologica, occupandomi di diagnosi e prevenzione del melanoma e degli altri
-        tumori cutanei.
+        dermochirurgia e la dermatologia oncologica, occupandomi della diagnosi precoce e della prevenzione del melanoma e degli altri tumori cutanei.
       </p>
       <p class="text-muted">
-        Nel 2025 mi sono iscritta presso la scuola S.I.Tri. per approfondire le mie conoscenze nel mondo della
+        Dal 2025 sono iscritta presso la scuola S.I.Tri. per approfondire le mie conoscenze nel campo della
         Tricologia.
       </p>
     </Fragment>
@@ -97,7 +238,7 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
   <!-- Formazione Timeline -->
   <Steps
     id="competenze"
-    title="Formazione e Competenze"
+    title="Formazione e Specializzazione"
     tagline=""
     classes={{ headline: { container: '!text-center' } }}
     items={[
@@ -178,7 +319,7 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
   <Services
     id="prestazioni"
     title="Prestazioni"
-    subtitle="I servizi dermatologici che offro"
+    subtitle="Visita dermatologica, tricologia e tutti i servizi dermatologici che offro"
     tagline="Servizi"
     services={[
       { name: 'Prima visita dermatologica', icon: 'tabler:stethoscope' },
@@ -205,8 +346,8 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
   <Reviews
     id="recensioni"
     title="Cosa dicono i pazienti"
-    subtitle="Le recensioni verificate dei miei pazienti su MioDottore"
-    tagline="Recensioni"
+    subtitle="Le recensioni verificate dei miei pazienti a Ortona, Pescara e Porto San Giorgio"
+    tagline="Dicono di me"
     reviews={[
       {
         name: 'Giorgia',
@@ -252,7 +393,7 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
       {
         name: 'Roberto',
         rating: 5,
-        comment: 'Diagnosi precisa e tempestiva. Grande professionalita e umanita. La consiglio a tutti.',
+        comment: 'Diagnosi precisa e tempestiva. Grande professionalità e umanità. La consiglio a tutti.',
         date: '10 dicembre 2025',
         visitType: 'visita dermatologica',
         verified: true,
@@ -288,7 +429,7 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
 
     <Fragment slot="subtitle">
       Prenota facilmente online su MioDottore.it<br />
-      <span class="text-sm text-muted">Scegli la data e l'orario piu comodo per te</span>
+      <span class="text-sm text-muted">Scegli la data e l'orario più comodo per te</span>
     </Fragment>
   </CallToAction>
 
@@ -296,7 +437,7 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
   <ContactForm
     id="contattami"
     title="Richiedi Informazioni"
-    subtitle="Compila il form per richiedere informazioni o prenotare una visita. Ti ricontatterò al piu presto."
+    subtitle="Compila il form per richiedere informazioni o prenotare una visita. Ti ricontatterò al più presto."
     tagline="Contattami"
     email="gianluca8491@gmail.com"
     services={[
@@ -312,4 +453,66 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
       'Visita tricologica',
     ]}
   />
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-16 md:py-20 px-4 sm:px-6 max-w-4xl mx-auto">
+    <div class="text-center mb-10">
+      <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-2">Domande frequenti</p>
+      <h2 class="text-3xl md:text-4xl font-bold font-heading">Hai una domanda?</h2>
+      <p class="mt-4 text-muted text-lg">
+        Qui trovi alcune risposte alle domande più frequenti dei miei pazienti su visite dermatologiche, tricologiche, mappatura nei, venereologia e sedi di visita.
+      </p>
+    </div>
+
+    <dl class="space-y-8">
+      <div>
+        <h3 class="text-lg font-semibold text-default">Dove visita la Dott.ssa Valentina di Gregorio a Ortona?</h3>
+        <p class="mt-2 text-muted">La Dott.ssa Valentina di Gregorio effettua visite dermatologiche anche a Ortona. Per conoscere disponibilità, giorni di visita e prenotare un appuntamento, è possibile utilizzare la pagina di prenotazione online.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-default">Dove visita la Dott.ssa Valentina di Gregorio a Pescara?</h3>
+        <p class="mt-2 text-muted">La Dott.ssa Valentina di Gregorio riceve anche a Pescara per visite dermatologiche, tricologiche e controlli specialistici. Per verificare la sede disponibile e gli orari aggiornati, è possibile prenotare online.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-default">La Dott.ssa Valentina di Gregorio visita anche a Civitanova Marche?</h3>
+        <p class="mt-2 text-muted">Sì, la Dott.ssa Valentina di Gregorio visita anche a Civitanova Marche. La disponibilità può variare in base alla sede e al periodo, per questo è consigliabile consultare la prenotazione online per verificare giorni e orari disponibili.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-default">La Dott.ssa Valentina di Gregorio visita anche a Porto San Giorgio?</h3>
+        <p class="mt-2 text-muted">Sì, tra le località indicate per le visite dermatologiche della Dott.ssa Valentina di Gregorio è presente anche Porto San Giorgio. La prenotazione online consente di verificare la sede e la prima disponibilità utile.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-default">È possibile prenotare una visita dermatologica online?</h3>
+        <p class="mt-2 text-muted">Sì, è possibile prenotare online la visita dermatologica attraverso la pagina dedicata. In questo modo è possibile consultare le disponibilità e scegliere data e orario più comodi.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-default">Quali servizi dermatologici offre?</h3>
+        <p class="mt-2 text-muted">Tra le principali prestazioni offerte ci sono prima visita dermatologica, visita di controllo, epiluminescenza, mappatura nei, visita tricologica, prima visita tricologica e trattamenti per verruche e molluschi.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-default">Quando è consigliata una visita dermatologica?</h3>
+        <p class="mt-2 text-muted">Una visita dermatologica è consigliata in presenza di acne, rosacea, dermatite, psoriasi, infezioni cutanee, lesioni pigmentate, cambiamenti nei nei, prurito persistente, caduta dei capelli o altri disturbi della pelle e del cuoio capelluto.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-default">Quando fare la mappatura dei nei?</h3>
+        <p class="mt-2 text-muted">La mappatura dei nei è utile per il controllo periodico delle lesioni pigmentate e per la prevenzione dei tumori cutanei. È particolarmente consigliata in caso di numerosi nei, familiarità per melanoma o cambiamenti recenti nell'aspetto di un neo.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-default">La Dott.ssa Valentina di Gregorio si occupa anche di tricologia?</h3>
+        <p class="mt-2 text-muted">Sì, la Dott.ssa Valentina di Gregorio si occupa anche di tricologia, con attenzione alla diagnosi e al trattamento di alopecia areata, alopecia androgenetica e patologie del cuoio capelluto.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-default">La Dott.ssa Valentina di Gregorio si occupa di venereologia?</h3>
+        <p class="mt-2 text-muted">Sì, la Dott.ssa Valentina di Gregorio si occupa anche di venereologia e della valutazione di alcune malattie sessualmente trasmissibili, verruche genitali e altre condizioni di interesse specialistico.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-default">È possibile prenotare una visita per acne, dermatite o psoriasi?</h3>
+        <p class="mt-2 text-muted">Sì, è possibile prenotare una visita specialistica per acne, dermatite atopica, eczema, psoriasi, rosacea, vitiligine e altre patologie infiammatorie della pelle.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-default">Come faccio a scegliere la sede più comoda?</h3>
+        <p class="mt-2 text-muted">Durante la prenotazione online è possibile verificare le disponibilità in base alla sede e scegliere quella più comoda tra le località indicate.</p>
+      </div>
+    </dl>
+  </section>
 </Layout>
