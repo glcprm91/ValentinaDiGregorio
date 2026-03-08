@@ -7,15 +7,15 @@ export const headerData = {
       href: getPermalink('/#chi-sono'),
     },
     {
-      text: 'Prestazioni',
+      text: 'Servizi',
       href: getPermalink('/#prestazioni'),
     },
     {
-      text: 'Competenze',
+      text: 'Specializzazioni',
       href: getPermalink('/#competenze'),
     },
     {
-      text: 'Recensioni',
+      text: 'Dicono di me',
       href: getPermalink('/#recensioni'),
     },
     {
@@ -38,9 +38,9 @@ export const footerData = {
       title: 'Navigazione',
       links: [
         { text: 'Chi Sono', href: getPermalink('/#chi-sono') },
-        { text: 'Prestazioni', href: getPermalink('/#prestazioni') },
-        { text: 'Competenze', href: getPermalink('/#competenze') },
-        { text: 'Recensioni', href: getPermalink('/#recensioni') },
+        { text: 'Servizi', href: getPermalink('/#prestazioni') },
+        { text: 'Specializzazioni', href: getPermalink('/#competenze') },
+        { text: 'Dicono di me', href: getPermalink('/#recensioni') },
       ],
     },
     {
