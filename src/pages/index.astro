@@ -16,85 +16,136 @@ const metadata = {
 };
 
 const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatologo-venereologo/monsampolo-del-tronto';
+const linkedinUrl = 'https://www.linkedin.com/in/valentina-di-gregorio-046bb043/';
+const siteUrl = 'https://www.dermatologavalentinadigregorio.it';
+const physicianId = `${siteUrl}/#physician`;
+const websiteId = `${siteUrl}/#website`;
+const webpageId = `${siteUrl}/#webpage`;
+const faqId = `${siteUrl}/#faq`;
+const imageId = `${siteUrl}/#primaryimage`;
 ---
 
 <Layout metadata={metadata}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Physician",
-      "@id": "https://valentinadigregorio.it/#physician",
-      "name": "Dott.ssa Valentina di Gregorio",
-      "url": "https://valentinadigregorio.it/",
-      "image": "https://valentinadigregorio.it/images/dottoressa.jpeg",
-      "description": "Dermatologa, venereologa e tricologa. Si occupa di dermatologia clinica, dermatologia oncologica, dermochirurgia, tricologia e diagnosi delle principali patologie della pelle, dei capelli e delle malattie sessualmente trasmissibili.",
-      "medicalSpecialty": ["Dermatologic", "Venereology"],
-      "knowsAbout": [
-        "Dermatologia", "Venereologia", "Tricologia", "Dermatologia oncologica",
-        "Dermochirurgia", "Mappatura nei", "Epiluminescenza", "Acne", "Rosacea",
-        "Dermatite atopica", "Psoriasi", "Vitiligine", "Alopecia areata",
-        "Alopecia androgenetica", "Infezioni cutanee", "Malattie sessualmente trasmissibili"
-      ],
-      "areaServed": [
-        { "@type": "City", "name": "Pescara" },
-        { "@type": "City", "name": "Ortona" },
-        { "@type": "City", "name": "Sambuceto" },
-        { "@type": "City", "name": "Porto San Giorgio" },
-        { "@type": "City", "name": "Civitanova Marche" },
-        { "@type": "City", "name": "Monsampolo del Tronto" }
-      ],
-      "availableService": [
-        { "@type": "MedicalProcedure", "name": "Prima visita dermatologica" },
-        { "@type": "MedicalProcedure", "name": "Visita dermatologica" },
-        { "@type": "MedicalProcedure", "name": "Visita dermatologica di controllo" },
-        { "@type": "MedicalProcedure", "name": "Epiluminescenza" },
-        { "@type": "MedicalProcedure", "name": "Mappatura nei" },
-        { "@type": "MedicalProcedure", "name": "Prima visita tricologica" },
-        { "@type": "MedicalProcedure", "name": "Visita tricologica" },
-        { "@type": "MedicalProcedure", "name": "Trattamento verruche e molluschi" },
-        { "@type": "MedicalProcedure", "name": "Visita dermatologica con epiluminescenza" },
-        { "@type": "MedicalProcedure", "name": "Visita dermatologica con mappatura nei" }
-      ],
-      "alumniOf": [
-        { "@type": "CollegeOrUniversity", "name": "Università G. d'Annunzio di Chieti-Pescara" },
-        { "@type": "CollegeOrUniversity", "name": "Università degli Studi di Siena" },
-        { "@type": "CollegeOrUniversity", "name": "Università Vanvitelli di Napoli" }
-      ],
-      "hasCredential": [
+      "@graph": [
         {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "Laurea in Medicina e Chirurgia",
-          "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Università G. d'Annunzio di Chieti-Pescara" }
+          "@type": "WebSite",
+          "@id": websiteId,
+          "url": `${siteUrl}/`,
+          "name": "Dott.ssa Valentina di Gregorio",
+          "description": "Sito ufficiale della Dott.ssa Valentina di Gregorio, dermatologa, venereologa e tricologa.",
+          "inLanguage": "it-IT",
+          "publisher": { "@id": physicianId }
         },
         {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "Specializzazione in Dermatologia e Venereologia",
-          "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Università G. d'Annunzio di Chieti-Pescara" }
+          "@type": "ImageObject",
+          "@id": imageId,
+          "url": `${siteUrl}/images/dottoressa.jpeg`,
+          "contentUrl": `${siteUrl}/images/dottoressa.jpeg`,
+          "caption": "Dott.ssa Valentina di Gregorio, dermatologa",
+          "inLanguage": "it-IT"
         },
         {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "Master di II livello in Dermochirurgia",
-          "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Università degli Studi di Siena" }
+          "@type": "WebPage",
+          "@id": webpageId,
+          "url": `${siteUrl}/`,
+          "name": "Dott.ssa Valentina di Gregorio | Dermatologa Venereologa a Pescara, Ortona, Porto San Giorgio, Civitanova Marche",
+          "isPartOf": { "@id": websiteId },
+          "about": { "@id": physicianId },
+          "primaryImageOfPage": { "@id": imageId },
+          "inLanguage": "it-IT",
+          "breadcrumb": { "@id": `${siteUrl}/#breadcrumb` }
         },
         {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "Master di II livello in Dermatologia Oncologica",
-          "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Università Vanvitelli di Napoli" }
-        }
-      ],
-      "memberOf": [{ "@type": "Organization", "name": "S.I.Tri." }],
-      "sameAs": [miodottoreUrl],
-      "potentialAction": {
-        "@type": "ReserveAction",
-        "name": "Prenota una visita",
-        "target": { "@type": "EntryPoint", "urlTemplate": miodottoreUrl }
-      }
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "@id": "https://valentinadigregorio.it/#faq",
-      "mainEntity": [
+          "@type": "BreadcrumbList",
+          "@id": `${siteUrl}/#breadcrumb`,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": `${siteUrl}/` }
+          ]
+        },
+        {
+          "@type": "Physician",
+          "@id": physicianId,
+          "name": "Dott.ssa Valentina di Gregorio",
+          "alternateName": "Valentina di Gregorio",
+          "honorificPrefix": "Dott.ssa",
+          "gender": "https://schema.org/Female",
+          "jobTitle": "Dermatologa, Venereologa, Tricologa",
+          "url": `${siteUrl}/`,
+          "mainEntityOfPage": { "@id": webpageId },
+          "image": { "@id": imageId },
+          "description": "Dermatologa, venereologa e tricologa. Si occupa di dermatologia clinica, dermatologia oncologica, dermochirurgia, tricologia e diagnosi delle principali patologie della pelle, dei capelli e delle malattie sessualmente trasmissibili.",
+          "medicalSpecialty": ["Dermatologic", "Venereology"],
+          "knowsLanguage": ["it"],
+          "knowsAbout": [
+            "Dermatologia", "Venereologia", "Tricologia", "Dermatologia oncologica",
+            "Dermochirurgia", "Mappatura nei", "Epiluminescenza", "Acne", "Rosacea",
+            "Dermatite atopica", "Psoriasi", "Vitiligine", "Alopecia areata",
+            "Alopecia androgenetica", "Infezioni cutanee", "Malattie sessualmente trasmissibili"
+          ],
+          "areaServed": [
+            { "@type": "City", "name": "Pescara", "containedInPlace": { "@type": "AdministrativeArea", "name": "Abruzzo" } },
+            { "@type": "City", "name": "Ortona", "containedInPlace": { "@type": "AdministrativeArea", "name": "Abruzzo" } },
+            { "@type": "City", "name": "Sambuceto", "containedInPlace": { "@type": "AdministrativeArea", "name": "Abruzzo" } },
+            { "@type": "City", "name": "Porto San Giorgio", "containedInPlace": { "@type": "AdministrativeArea", "name": "Marche" } },
+            { "@type": "City", "name": "Civitanova Marche", "containedInPlace": { "@type": "AdministrativeArea", "name": "Marche" } },
+            { "@type": "City", "name": "Monsampolo del Tronto", "containedInPlace": { "@type": "AdministrativeArea", "name": "Marche" } }
+          ],
+          "availableService": [
+            { "@type": "MedicalProcedure", "name": "Prima visita dermatologica" },
+            { "@type": "MedicalProcedure", "name": "Visita dermatologica" },
+            { "@type": "MedicalProcedure", "name": "Visita dermatologica di controllo" },
+            { "@type": "MedicalProcedure", "name": "Epiluminescenza" },
+            { "@type": "MedicalProcedure", "name": "Mappatura nei" },
+            { "@type": "MedicalProcedure", "name": "Prima visita tricologica" },
+            { "@type": "MedicalProcedure", "name": "Visita tricologica" },
+            { "@type": "MedicalProcedure", "name": "Trattamento verruche e molluschi" },
+            { "@type": "MedicalProcedure", "name": "Visita dermatologica con epiluminescenza" },
+            { "@type": "MedicalProcedure", "name": "Visita dermatologica con mappatura nei" }
+          ],
+          "alumniOf": [
+            { "@type": "CollegeOrUniversity", "name": "Università G. d'Annunzio di Chieti-Pescara" },
+            { "@type": "CollegeOrUniversity", "name": "Università degli Studi di Siena" },
+            { "@type": "CollegeOrUniversity", "name": "Università Vanvitelli di Napoli" }
+          ],
+          "hasCredential": [
+            {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "Laurea in Medicina e Chirurgia",
+              "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Università G. d'Annunzio di Chieti-Pescara" }
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "Specializzazione in Dermatologia e Venereologia",
+              "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Università G. d'Annunzio di Chieti-Pescara" }
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "Master di II livello in Dermochirurgia",
+              "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Università degli Studi di Siena" }
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "Master di II livello in Dermatologia Oncologica",
+              "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Università Vanvitelli di Napoli" }
+            }
+          ],
+          "memberOf": [{ "@type": "Organization", "name": "S.I.Tri.", "description": "Società Italiana di Tricologia" }],
+          "sameAs": [miodottoreUrl, linkedinUrl],
+          "potentialAction": {
+            "@type": "ReserveAction",
+            "name": "Prenota una visita",
+            "target": { "@type": "EntryPoint", "urlTemplate": miodottoreUrl, "actionPlatform": ["https://schema.org/DesktopWebPlatform", "https://schema.org/MobileWebPlatform"] },
+            "result": { "@type": "Reservation", "name": "Visita dermatologica" }
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": faqId,
+          "isPartOf": { "@id": webpageId },
+          "mainEntity": [
         {
           "@type": "Question",
           "name": "Dove visita la Dott.ssa Valentina di Gregorio a Ortona?",
@@ -154,6 +205,8 @@ const miodottoreUrl = 'https://www.miodottore.it/valentina-di-gregorio/dermatolo
           "@type": "Question",
           "name": "Come faccio a scegliere la sede più comoda?",
           "acceptedAnswer": { "@type": "Answer", "text": "Durante la prenotazione online è possibile verificare le disponibilità in base alla sede e scegliere quella più comoda tra le località indicate." }
+        }
+          ]
         }
       ]
     })} />
