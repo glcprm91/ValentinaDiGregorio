@@ -1,6 +1,6 @@
 site:
   name: Dott.ssa Valentina di Gregorio
-  site: 'https://valentinadigregorio.it'
+  site: 'https://www.dermatologavalentinadigregorio.it'
   base: '/'
   trailingSlash: false
 
@@ -33,7 +33,7 @@ i18n:
 
 apps:
   blog:
-    isEnabled: true
+    isEnabled: false
     postsPerPage: 6
 
     post:
